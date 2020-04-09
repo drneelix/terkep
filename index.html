@@ -144,7 +144,7 @@
             .setPopup(popup)
             .addTo(map); // add the marker to the map
           
-var runLayer = omnivore.kml('')
+var runLayer = omnivore.kml('bekesmegye.kml')
     .on('ready', function() {
         map.fitBounds(runLayer.getBounds());
     })
