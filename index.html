@@ -11,7 +11,6 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
     <link rel="stylesheet" href="style.css">
 
   </head>
@@ -101,7 +100,7 @@
       mapboxgl.accessToken = 'pk.eyJ1IjoibmVlbGl4IiwiYSI6ImNqdDl3Nm95bjA0eW80OXFkcWdvbnE5YzcifQ.WC85rJPWoLVZa-Ggkz5l3Q';
       var map = new mapboxgl.Map({
         container: 'map', // container id
-        style: "mapbox://styles/mapbox/streets-v11", //YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
+        style: "mapbox://styles/neelix/cjt9wm8840nte1fo7903x8zje", //YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
         center: [20.9820736, 46.7862993], // starting position [lng, lat]
         zoom: 8, // starting zoom
         transformRequest: transformRequest
@@ -143,13 +142,7 @@
             .setLngLat([row.Longitude, row.Latitude])
             .setPopup(popup)
             .addTo(map); // add the marker to the map
-          
-        var runLayer = omnivore.kml('bekesmegye.kml')
-        .on('ready', function() {
-        map.fitBounds(runLayer.getBounds());
-          })
-        .addTo(map);
-
+                  
         });
       }
 
