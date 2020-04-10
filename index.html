@@ -144,44 +144,7 @@
             .addTo(map); // add the marker to the map
                   
         });
-      }
-      
-      // Initialize Tabletop to access your table
-      function init() {
-        Tabletop.init({
-          // YOUR TURN: change 'key' value to point to your spreadsheet
-          key: 'https://docs.google.com/spreadsheets/d/1aTH2ib3kV06QagfNVjy8tSPyvkwfzd8Cho1MvvHnAHw/edit?usp=sharing',
-          // once Tabletop has loaded the data, it passes it to the 'callback' function, 'addPoints', defined below
-          callback: addPoints,
-          simpleSheet: true
-        });
-      }
-
-
-      // create a function called addPoints that iterates through your table (row by row) to create markers and popups
-      function addPoints(data) {
-
-        // iterate through your table to set the marker to lat/long values for each row
-
-        data.forEach(function(row) {
-
-          // create a variable for your popup and populate your popup with information from your table
-          var popup = new mapboxgl.Popup()
-            .setHTML(`<h6>` + row.Név + `</h6>` + '<h6>' + row.Település + '</h6>'); // use the table to populate your popup with text
-
-
-          // create a variable for your markup and add it to the map 
-          var marker = new mapboxgl.Marker({
-              color: 'purpule'
-            })
-            .setLngLat([row.Longitude, row.Latitude])
-            .setPopup(popup)
-            .addTo(map); // add the marker to the map
-                  
-        });
-      }
-      
-      
+      }         
       
     </script>
   </body>
